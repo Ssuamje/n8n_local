@@ -7,7 +7,6 @@ RUN apk update && apk add --no-cache \
     git \
     python3 \
     py3-pip \
-    py3-venv \
     build-base \
     bash \
     chromium \
