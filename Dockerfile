@@ -19,7 +19,3 @@ ENV CHROME_PATH=/usr/lib/chromium/
 USER node
 
 WORKDIR /home/node
-
-EXPOSE 5678
-
-CMD ["n8n", "start"]

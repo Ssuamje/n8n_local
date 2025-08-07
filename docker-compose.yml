@@ -23,7 +23,7 @@ services:
     volumes:
       - ./volumes/n8n:/home/node/.n8n
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./scripts:/root/scripts
+      - ./scripts:/home/node/scripts
     depends_on:
       postgres:
         condition: service_healthy
