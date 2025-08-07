@@ -86,6 +86,35 @@ docker run -d \
 | `WEBHOOK_URL` | http://localhost:5678/ | 웹훅 URL |
 | `GENERIC_TIMEZONE` | Asia/Seoul | 시간대 |
 
+## 🤖 외부 스크립트 자동화
+
+### 스크립트 설정 방법
+
+1. 로컬에 `scripts/` 폴더 생성
+2. 실행할 스크립트들을 `scripts/` 폴더에 저장
+3. 외부 파일 접근이 필요하면 docker-compose.yml에 볼륨 마운트 추가:
+   ```yaml
+   volumes:
+     - /path/to/your/files:/workspace
+   ```
+
+### n8n 워크플로우에서 스크립트 실행하기
+
+1. **Execute Command** 노드 사용:
+   ```bash
+   /root/scripts/your_script.sh
+   ```
+
+### 마운트된 경로
+- `/root/scripts` → `./scripts` (로컬 스크립트들)
+- 필요시 추가: 외부 작업 디렉토리
+
+### 설치된 의존성
+- Python 3 + pip + venv
+- Bash shell
+- Chromium + ChromeDriver (Selenium용)
+- 기본 빌드 도구들
+
 ## 🔧 커스터마이징
 
 ### 1. 추가 패키지 설치

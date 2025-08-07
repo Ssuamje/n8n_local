@@ -4,6 +4,9 @@
 # Docker volumes (data directories)
 volumes/
 
+# Scripts directory
+scripts/
+
 # Node modules (if any)
 node_modules/
 

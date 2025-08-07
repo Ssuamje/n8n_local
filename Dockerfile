@@ -7,8 +7,15 @@ RUN apk update && apk add --no-cache \
     git \
     python3 \
     py3-pip \
+    py3-venv \
     build-base \
+    bash \
+    chromium \
+    chromium-chromedriver \
     && rm -rf /var/cache/apk/*
+
+ENV CHROME_BIN=/usr/bin/chromium-browser
+ENV CHROME_PATH=/usr/lib/chromium/
 
 USER node
 
